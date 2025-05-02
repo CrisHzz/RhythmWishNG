@@ -8,9 +8,10 @@ import { ChartsComponent } from './pages/charts/charts.component';
 import { WalkthroughComponent } from './pages/walkthrough/walkthrough.component';
 import { ProfileComponent } from './pages/profile/profile.component';
 import { BrandingComponent } from './branding/branding.component';
+import { LandingPageComponent } from './pages/landing-page/landing-page.component';
 
 export const routes: Routes = [
-  { path: '', component: BrandingComponent, pathMatch: 'full' }, 
+  { path: '', component: LandingPageComponent, pathMatch: 'full' }, 
   { path: 'branding', component: BrandingComponent },
   { path: 'dashboard', component: DashboardComponent },
   { path: 'signin', component: SignInComponent },
@@ -20,5 +21,5 @@ export const routes: Routes = [
   { path: 'charts', component: ChartsComponent },
   { path: 'walkthrough', component: WalkthroughComponent },
   { path: 'profile', component: ProfileComponent },
-  { path: '**', redirectTo: 'branding' } 
+  { path: '**', redirectTo: '' } 
 ];

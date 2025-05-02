@@ -1,0 +1,35 @@
+:host {
+  display: contents;
+}
+
+:host ::ng-deep .text-gradient-brand {
+  background: linear-gradient(90deg, var(--primary) 0%, var(--secondary) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+:host ::ng-deep header {
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.8);
+}
+
+:host ::ng-deep header a {
+  color: white;
+  font-weight: 500;
+}
+
+:host ::ng-deep header .auth-buttons a {
+  text-shadow: none; 
+}
+
+@media (max-width: 768px) {
+  :host ::ng-deep main {
+    margin-top: 150px;
+  }
+}
+
+@media (max-width: 480px) {
+  :host ::ng-deep main {
+    margin-top: 200px;
+  }
+}

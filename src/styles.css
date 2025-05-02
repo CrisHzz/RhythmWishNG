@@ -2,3 +2,16 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Gradiente de texto de marca */
+.text-gradient-brand {
+  background: linear-gradient(90deg, rgba(255, 141, 0, 1) 0%, rgba(255, 239, 0, 1) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+:root {
+  --primary: rgba(255, 141, 0, 1);  
+  --secondary: rgba(255, 239, 0, 1); 
+}
