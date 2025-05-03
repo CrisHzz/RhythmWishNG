@@ -27,7 +27,6 @@
     url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120' viewBox='0 0 24 24'%3E%3Cpath fill='%23ffffff' opacity='0.08' d='M16.5,3 C19.5,3 22,5.5 22,8.5 C22,11.1 20.1,13.3 17.6,13.8 L17.6,21 L15.6,21 L15.6,3 L16.5,3 Z M16.5,5 L16.5,11.9 C18.2,11.4 19.5,10.1 19.5,8.5 C19.5,6.8 18.2,5.5 16.5,5 Z M7.5,3 C10.5,3 13,5.5 13,8.5 C13,11.1 11.1,13.3 8.6,13.8 L8.6,21 L6.6,21 L6.6,3 L7.5,3 Z M7.5,5 L7.5,11.9 C9.2,11.4 10.5,10.1 10.5,8.5 C10.5,6.8 9.2,5.5 7.5,5 Z'/%3E%3C/svg%3E");
   background-size: 80px, 100px, 120px;
   background-position: 0 0, 50px 50px, 100px 100px;
-  transform: rotate(-10deg);
   z-index: -1;
   pointer-events: none; 
 }

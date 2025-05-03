@@ -1,0 +1,42 @@
+<aside class="vertical-header">
+  <div class="logo-container">
+    <div class="logo">
+      <h1>Rhythm<span>Wish</span></h1>
+      <p>BETA</p>
+    </div>
+  </div>
+
+  <nav class="nav-buttons">
+    <a routerLink="/dashboard" routerLinkActive="active" class="nav-button">
+      <i class="fas fa-home"></i>
+      <span>Inicio</span>
+    </a>
+    <a routerLink="/create-song" routerLinkActive="active" class="nav-button">
+      <i class="fa-solid fa-gear"></i> 
+      <span>Crear</span>
+    </a>
+    <a routerLink="/genres" routerLinkActive="active" class="nav-button">
+      <i class="fas fa-music"></i>
+      <span>Explorar</span>
+    </a>
+    <a routerLink="/charts" routerLinkActive="active" class="nav-button">
+      <i class="fas fa-chart-line"></i>
+      <span>Tendencias</span>
+    </a>
+    <a routerLink="/walkthrough" routerLinkActive="active" class="nav-button">
+      <i class="fas fa-book"></i>
+      <span>Tutoriales</span>
+    </a>
+    <a routerLink="/profile" routerLinkActive="active" class="nav-button">
+      <i class="fas fa-user"></i>
+      <span>Perfil</span>
+    </a>
+  </nav>
+
+  <div class="logout-container">
+    <a href="#" (click)="logout($event)" class="logout-button">
+      <i class="fas fa-sign-out-alt"></i>
+      <span>Cerrar sesión</span>
+    </a>
+  </div>
+</aside>
