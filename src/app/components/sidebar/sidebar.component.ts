@@ -1,7 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
+import { AuthService, UserData } from '../../services/auth.service';
 
 @Component({
   selector: 'app-sidebar',
@@ -10,16 +11,22 @@ import { CommonModule } from '@angular/common';
   standalone: true,
   imports: [CommonModule, RouterModule]
 })
-export class SidebarComponent {
+export class SidebarComponent implements OnInit {
+  userData: UserData | null = null;
   
-  constructor(private router: Router) { }
+  constructor(private router: Router, private authService: AuthService) { }
+  
+  ngOnInit(): void {
+    // Suscribirse a los cambios en el usuario actual
+    this.authService.currentUser.subscribe(user => {
+      this.userData = user;
+    });
+  }
 
   logout(event: Event): void {
     event.preventDefault();
-    // Aquí implementar la lógica de cierre de sesión
-    // Por ejemplo, eliminar tokens de autenticación del localStorage
-    localStorage.removeItem('authToken');
-    // Redirigir al login
-    this.router.navigate(['/sign-in']);
+    // Usar el servicio de autenticación para cerrar sesión
+    this.authService.logout();
+    // No necesitamos redirigir aquí ya que el servicio se encarga de eso
   }
 }

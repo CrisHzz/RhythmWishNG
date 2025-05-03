@@ -1,1 +1,85 @@
-<p>sign-up works!</p>
+<app-custom-cursor>
+  <div class="min-h-screen flex items-center justify-center bg-dark-bg bg-music-pattern">
+    <button [routerLink]="['/']" class="absolute top-5 left-5 px-4 py-2 bg-gray-800 text-white rounded hover:bg-gray-700 transition-all">
+      ← Regresar
+    </button>
+
+    <div class="w-full max-w-md p-8 m-4 bg-black bg-opacity-85 rounded-lg shadow-lg border border-gray-700">
+      <div class="text-center mb-8">
+        <h1 class="text-3xl font-bold bg-gradient-to-r from-orange-500 to-yellow-400 bg-clip-text text-transparent">
+          Rhythm Wish
+        </h1>
+        <p class="text-gray-400 mt-1">Crea el ritmo de tus deseos</p>
+      </div>
+
+      <form (ngSubmit)="onSubmit()" class="space-y-4">
+        <div>
+          <input 
+            type="email" 
+            id="email" 
+            [(ngModel)]="email"
+            name="email" 
+            placeholder="Email" 
+            class="w-full px-4 py-3 rounded bg-gray-800 border border-gray-700 text-white focus:outline-none focus:border-orange-500 focus:ring-1 focus:ring-orange-500"
+            required
+          />
+        </div>
+
+        <div>
+          <input 
+            type="password" 
+            id="password" 
+            [(ngModel)]="password"
+            name="password" 
+            placeholder="Password" 
+            class="w-full px-4 py-3 rounded bg-gray-800 border border-gray-700 text-white focus:outline-none focus:border-orange-500 focus:ring-1 focus:ring-orange-500"
+            required
+          />
+        </div>
+
+        <div>
+          <input 
+            type="password" 
+            id="confirmPassword" 
+            [(ngModel)]="confirmPassword"
+            name="confirmPassword" 
+            placeholder="Confirm Password" 
+            class="w-full px-4 py-3 rounded bg-gray-800 border border-gray-700 text-white focus:outline-none focus:border-orange-500 focus:ring-1 focus:ring-orange-500"
+            required
+          />
+        </div>
+
+        <button 
+          type="submit" 
+          class="w-full py-3 rounded font-medium bg-gradient-to-r from-orange-500 to-yellow-400 text-gray-900 hover:shadow-lg transform hover:-translate-y-0.5 transition-all"
+        >
+          Registrarse
+        </button>
+
+        <!-- Selección de rol -->
+        <div class="mt-6 pt-5 border-t border-gray-700">
+          <h3 class="text-white mb-3 text-sm font-medium">¿Qué rol te dedicas?</h3>
+          <div class="space-y-3">
+            <div *ngFor="let role of roles" class="flex items-center">
+              <input 
+                type="radio" 
+                [id]="role.value"
+                [value]="role.value" 
+                name="role" 
+                [(ngModel)]="selectedRole"
+                class="w-4 h-4 accent-orange-500"
+              />
+              <label [for]="role.value" class="ml-2 text-white">{{ role.label }}</label>
+            </div>
+          </div>
+        </div>
+      </form>
+
+      <div class="text-center mt-6">
+        <a [routerLink]="['/signin']" class="text-yellow-400 hover:underline text-sm">
+          ¿Ya tienes una cuenta? Inicia sesión
+        </a>
+      </div>
+    </div>
+  </div>
+</app-custom-cursor>
